@@ -1,9 +1,9 @@
 import { makeAutoObservable } from 'mobx';
 import AuthService from '../services/authService';
 export default class AuthStore {
-  userId = null;
+  userId = localStorage.getItem('userId') || null;
   Isrequest = false;
-  IsAuth = false;
+  IsAuth = !!this.userId;
   constructor() {
     makeAutoObservable(this);
   }
@@ -14,6 +14,7 @@ export default class AuthStore {
       this.userId = response.data;
       if (response.status === 200) {
         this.Isrequest = true;
+        localStorage.setItem('userId', this.userId);
       }
     } catch (e) {
       console.log(e);

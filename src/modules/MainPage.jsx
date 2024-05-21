@@ -1,7 +1,9 @@
 import '../styles/MainPage.css';
+import { Context } from '../main';
 
 const MainPage = () => {
-  return <div>1234</div>;
+  let userId = localStorage.getItem('userId');
+  return <div>{userId}</div>;
 };
 
 export default MainPage;
