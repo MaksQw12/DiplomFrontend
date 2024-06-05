@@ -1,3 +1,9 @@
 body {
   margin: 0;
+  font-family: Unbounded;
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url('../assets/Unbounded-VariableFont_wght.ttf');
 }

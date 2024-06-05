@@ -1,0 +1,13 @@
+.content-acardion {
+  width: 830px;
+}
+
+.acordion-item {
+  margin-bottom: 50px;
+}
+
+.content-acardion-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
