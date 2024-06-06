@@ -25,14 +25,19 @@
 .cart-button-element {
   height: 60px;
   width: 180px;
-  background-color: #424c52;
-  color: #c6cfd2;
+  background-color: snow;
+  box-shadow: 4px 10px 10px black;
+  color: black;
   border: none;
+  border: 1px solid black;
   border-radius: 10px;
   font-size: 18px;
 }
 .cart-button-element:hover {
   opacity: 0.8;
+  background-color: black;
+  color: white;
+  box-shadow: 2px 5px 5px black;
 }
 
 .content-item-cart-text {
@@ -43,7 +48,7 @@
   flex-direction: column;
 }
 .cart-text-element {
-  color: #c6cfd2;
+  color: black;
   margin-top: 20px;
 }
 

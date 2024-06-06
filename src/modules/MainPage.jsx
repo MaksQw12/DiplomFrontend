@@ -24,7 +24,7 @@ const MainPage = () => {
     <div className="wrapper-content-main">
       <div className="content-header">
         <div className="header-text-h2">
-          <h2>Текстиль</h2>
+          <h2 className="element-h2">Текстиль</h2>
         </div>
         <div className="header-text-a">
           <Link to="ItemsPage" className="text-a">
