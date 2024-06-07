@@ -28,7 +28,6 @@ export default class AuthStore {
     try {
       const response = await AuthService.postSendCode(authData);
       if (response.status === 200) {
-        console.log('you SignUp your id : ' + this.userId + ' ' + this.userEmail);
         this.IsAuth = true;
       }
     } catch (e) {

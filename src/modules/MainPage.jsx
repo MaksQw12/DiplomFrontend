@@ -6,11 +6,12 @@ import AboutUs from './AboutUs';
 import tg_logo from '../assets/Tg_logo.svg';
 import vk_logo from '../assets/Vk_logo.svg';
 import { useNavigate } from 'react-router-dom';
+import ItemDetailPage from './ItemDetailPage';
+import BasketPage from './BasketPage';
 const MainPage = () => {
   const navigate = useNavigate();
   const [isProfilePanelVisible, setIsProfilePanelVisible] = useState(false);
   const email = localStorage.getItem('userEmail');
-  console.log('почта ', email);
   const toggleProfilePanel = () => {
     setIsProfilePanelVisible((prevState) => !prevState);
   };
@@ -30,9 +31,9 @@ const MainPage = () => {
           <Link to="ItemsPage" className="text-a">
             Товары
           </Link>
-          <a href="" className="text-a">
+          <Link to="BasketPage" className="text-a">
             Корзина
-          </a>
+          </Link>
           <Link to="AboutUs" className="text-a">
             О нас
           </Link>
@@ -54,6 +55,8 @@ const MainPage = () => {
         <Routes>
           <Route path="ItemsPage" element={<ItemsPage />} />
           <Route path="AboutUs" element={<AboutUs />} />
+          <Route path="ItemDetailPage" element={<ItemDetailPage />} />
+          <Route path="BasketPage" element={<BasketPage />} />
         </Routes>
       </div>
       <div className="content-footer">

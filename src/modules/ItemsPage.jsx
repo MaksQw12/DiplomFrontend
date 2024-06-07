@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../main';
 import { observer } from 'mobx-react-lite';
 import ItemCartSkeleton from './ItemCartSkeleton';
+
 const ItemsPage = () => {
   const { productStore } = useContext(Context);
   const [loading, setLoading] = useState(true);
@@ -16,7 +17,9 @@ const ItemsPage = () => {
     const fetchData = async () => {
       setLoading(true);
       await productStore.fetchProducts(search);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1500);
     };
     fetchData();
   }, [search, productStore]);
@@ -43,6 +46,7 @@ const ItemsPage = () => {
           : filterItems.map((res) => (
               <ItemsPageCart
                 key={res.id}
+                id={res.id}
                 title={res.productName}
                 price={res.price}
                 image={res.image}

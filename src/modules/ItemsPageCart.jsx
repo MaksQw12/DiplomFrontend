@@ -1,7 +1,15 @@
 import '../styles/ItemsPageCart.css';
-
+import { useNavigate } from 'react-router-dom';
+import { Context } from '../main';
+import React, { useEffect, useContext } from 'react';
 const ItemsPageCart = ({ id, title, price, image }) => {
+  const { productStore } = useContext(Context);
   const imageUrl = `data:image/jpeg;base64,${image}`;
+  const navigate = useNavigate();
+  const handleMoreDetails = async () => {
+    await productStore.fetchProductById(id);
+    navigate(`/MainPage/ItemDetailPage`);
+  };
   return (
     <>
       <div className="content-body-item-cart">
@@ -15,7 +23,9 @@ const ItemsPageCart = ({ id, title, price, image }) => {
         </div>
 
         <div className="content-item-cart-button">
-          <button className="cart-button-element">Подробнее</button>
+          <button className="cart-button-element" onClick={handleMoreDetails}>
+            Подробнее
+          </button>
         </div>
       </div>
     </>
