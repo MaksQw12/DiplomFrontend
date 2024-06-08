@@ -28,37 +28,45 @@ const Auth = () => {
   };
 
   return (
-    <div className="wrapper-content-auth">
-      <div className="login-container">
-        <h2>Вход</h2>
-        <form>
-          <div className="input-group">
-            <label>Логин:</label>
-            <input
-              type="text"
-              id="login"
-              name="login"
-              value={userName}
-              onChange={handleLoginChange}></input>
+    <div className="wrapper-container">
+      <div className="container-left">
+        <div className="wrapper-content-auth">
+          <div className="login-container">
+            <h2>Вход</h2>
+            <form>
+              <div className="input-group">
+                <label>Логин:</label>
+                <input
+                  type="text"
+                  id="login"
+                  name="login"
+                  value={userName}
+                  onChange={handleLoginChange}></input>
+              </div>
+              <div className="input-group">
+                <label>Почта:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={handleEmailChange}></input>
+              </div>
+              <button type="submit" onClick={handleAuth}>
+                Войти
+              </button>
+            </form>
+            <div className="register-link">
+              <p>
+                Нет аккаунта? <Link to="/SignUp">Зарегистрируйтесь</Link>
+              </p>
+            </div>
           </div>
-          <div className="input-group">
-            <label>Почта:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={email}
-              onChange={handleEmailChange}></input>
-          </div>
-          <button type="submit" onClick={handleAuth}>
-            Войти
-          </button>
-        </form>
-        <div className="register-link">
-          <p>
-            Нет аккаунта? <Link to="/SignUp">Зарегистрируйтесь</Link>
-          </p>
         </div>
+      </div>
+      <div className="container-right">
+        <h2>Добро пожаловать в мазагин Текстиль</h2>
+        <p>Пожалуйста авторизуйтесь или создайте аккаунт</p>
       </div>
     </div>
   );
