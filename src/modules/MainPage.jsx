@@ -8,6 +8,7 @@ import vk_logo from '../assets/Vk_logo.svg';
 import { useNavigate } from 'react-router-dom';
 import ItemDetailPage from './ItemDetailPage';
 import BasketPage from './BasketPage';
+import MainPageView from './MainPageView';
 const MainPage = () => {
   const navigate = useNavigate();
   const [isProfilePanelVisible, setIsProfilePanelVisible] = useState(false);
@@ -25,7 +26,9 @@ const MainPage = () => {
     <div className="wrapper-content-main">
       <div className="content-header">
         <div className="header-text-h2">
-          <h2 className="element-h2">Текстиль</h2>
+          <Link className="element-h2" to="/MainPage">
+            Текстиль
+          </Link>
         </div>
         <div className="header-text-a">
           <Link to="ItemsPage" className="text-a">
@@ -53,6 +56,7 @@ const MainPage = () => {
       </div>
       <div className="content-body">
         <Routes>
+          <Route path="/" element={<div>123</div>} />
           <Route path="ItemsPage" element={<ItemsPage />} />
           <Route path="AboutUs" element={<AboutUs />} />
           <Route path="ItemDetailPage" element={<ItemDetailPage />} />

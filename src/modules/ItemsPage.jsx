@@ -13,13 +13,14 @@ const ItemsPage = () => {
   const handleGetValue = (e) => {
     setSearch(e.target.value);
   };
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       await productStore.fetchProducts(search);
       setTimeout(() => {
         setLoading(false);
-      }, 1500);
+      }, 500);
     };
     fetchData();
   }, [search, productStore]);
@@ -27,6 +28,7 @@ const ItemsPage = () => {
   const filterItems = productStore.products.filter((item) =>
     item.productName.toLowerCase().includes(search.toLowerCase()),
   );
+
   return (
     <div className="content-itemsPage">
       <div className="content-input">
@@ -40,8 +42,8 @@ const ItemsPage = () => {
       </div>
       <div className="content-cart">
         {loading
-          ? Array.from({ length: productStore.products.length }).map((_, index) => (
-              <ItemCartSkeleton key={index} />
+          ? Array.from({ length: 10 }).map((_, index) => (
+              <ItemCartSkeleton className="content-skeleton" key={index} />
             ))
           : filterItems.map((res) => (
               <ItemsPageCart

@@ -1,0 +1,40 @@
+.content-cart-comments {
+  height: 250px;
+  width: 500px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background: linear-gradient(135deg, #f3f4f6, #ffffff);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.content-cart-comments:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.content-cart-text {
+  margin-left: 5px;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.text-p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.content-cart-rating {
+  height: 50px;
+  text-align: center;
+  align-self: flex-end;
+  font-size: 18px;
+  color: #555;
+}

@@ -11,5 +11,5 @@ export default class BasketService {
 
   static async updateBasketItem(basketItemId, basketData) {
     return await $api.put(`/Baskets/${basketItemId}`, basketData);
-  }
+}
 }

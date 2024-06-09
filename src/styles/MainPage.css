@@ -8,7 +8,7 @@
 
 .content-header {
   height: 120px;
-  background-color: #404c4f;
+  background-color: #007bff;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -29,6 +29,8 @@
 
 .element-h2 {
   color: white;
+  font-size: 25px;
+  text-decoration: none;
 }
 
 .header-text-h5 {
@@ -42,9 +44,10 @@
 
 .profile-panel {
   position: absolute;
+  width: 180px;
   top: 100%;
   left: 0;
-  background-color: #5b6571;
+  background-color: #034859;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 10px;
@@ -52,20 +55,9 @@
 }
 
 .profile-button {
-  display: block;
   width: 100%;
-  padding: 10px;
-  border: none;
-  margin: 2px;
-  background-color: black;
-  color: white;
-  text-align: left;
-  cursor: pointer;
-}
 
-.profile-button:hover {
-  background-color: white;
-  color: black;
+  cursor: pointer;
 }
 
 .text-h5:hover {
@@ -74,7 +66,7 @@
 
 .content-footer {
   height: 110px;
-  background-color: #404c4f;
+  background-color: #007bff;
   display: flex;
   justify-content: center;
   align-items: center;

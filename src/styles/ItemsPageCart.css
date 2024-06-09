@@ -1,60 +1,65 @@
 .content-body-item-cart {
-  margin-top: 30px;
-  background-color: white;
-  box-shadow: 0px 0px 15px black;
-  width: 400px;
   height: 550px;
+  width: 450px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 15px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f3f4f6, #ffffff);
+  transition: box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+  margin: 10px;
 }
 
-.content-item-cart-button {
-  height: 200px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.cart-image-content {
-  width: 260px;
-  height: 260px;
-}
-
-.cart-button-element {
-  height: 60px;
-  width: 180px;
-  background-color: snow;
-  box-shadow: 4px 10px 10px black;
-  color: black;
-  border: none;
-  border: 1px solid black;
-  border-radius: 10px;
-  font-size: 18px;
-}
-.cart-button-element:hover {
-  opacity: 0.8;
-  background-color: black;
-  color: white;
-  box-shadow: 2px 5px 5px black;
-}
-
-.content-item-cart-text {
-  height: 350px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.cart-text-element {
-  color: black;
-  margin-top: 20px;
+.content-body-item-cart:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .content-item-cart-image {
-  height: 100%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cart-image-content {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.content-item-cart-text {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.cart-text-element {
+  font-size: 16px;
+  color: #333;
+  margin: 5px 0;
+}
+
+.content-item-cart-button {
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+
+.cart-button-element {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-button-element:hover {
+  background-color: #0056b3;
 }
