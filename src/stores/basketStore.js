@@ -3,8 +3,41 @@ import BasketService from '../services/basketService';
 
 export default class BasketStore {
   basket = null;
+  basketUser = [];
   constructor() {
     makeAutoObservable(this);
+  }
+
+  async deleteAll(userId) {
+    try {
+      const response = await BasketService.deleteAll(userId);
+      this.basketUser = [];
+      if (response.status === 204) {
+        console.log('все продукты удалены');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  async getBasketForPage(userId) {
+    try {
+      const response = await BasketService.getBasketForPage(userId);
+      this.basketUser = response.data;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  async deleteBasket(id) {
+    try {
+      const respone = await BasketService.deleteBasket(id);
+      if (respone.status === 204) {
+        alert('Продукт удален из корзины');
+      }
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   async postBasket(basketData) {
@@ -39,5 +72,9 @@ export default class BasketStore {
     } catch (error) {
       console.error('Error updating basket item:', error);
     }
+  }
+
+  get totalCost() {
+    return this.basketUser.reduce((total, item) => total + item.product.price * item.count, 0);
   }
 }

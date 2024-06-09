@@ -11,5 +11,16 @@ export default class BasketService {
 
   static async updateBasketItem(basketItemId, basketData) {
     return await $api.put(`/Baskets/${basketItemId}`, basketData);
-}
+  }
+  static async getBasketForPage(userId) {
+    return await $api.get(`/Baskets/user/${userId}`);
+  }
+
+  static async deleteBasket(id) {
+    return await $api.delete(`/Baskets/${id}`);
+  }
+
+  static async deleteAll(userId) {
+    return await $api.delete(`/Baskets/user/${userId}`);
+  }
 }

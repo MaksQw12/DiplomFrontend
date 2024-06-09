@@ -56,7 +56,7 @@ const MainPage = () => {
       </div>
       <div className="content-body">
         <Routes>
-          <Route path="/" element={<div>123</div>} />
+          <Route path="/" element={<MainPageView />} />
           <Route path="ItemsPage" element={<ItemsPage />} />
           <Route path="AboutUs" element={<AboutUs />} />
           <Route path="ItemDetailPage" element={<ItemDetailPage />} />
