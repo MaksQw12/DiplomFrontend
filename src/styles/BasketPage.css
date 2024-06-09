@@ -1,5 +1,5 @@
 .container-basket {
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -10,6 +10,18 @@
   margin-bottom: 5px;
   flex-direction: column;
   margin-top: 10px;
+}
+
+.empty-basket-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.sad-face {
+  font-size: 100px;
 }
 
 .content-button {

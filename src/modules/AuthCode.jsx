@@ -18,6 +18,8 @@ const AuthCode = () => {
       if (authStore.IsAuth === true) {
         console.log('code is true you auth');
         navigate('/MainPage');
+      } else {
+        alert('Код введен неправильно или пустая строка');
       }
     } catch (e) {
       console.log(e);

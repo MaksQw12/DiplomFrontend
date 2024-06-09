@@ -66,7 +66,7 @@ const ItemDetailPage = () => {
       } else {
         await basketStore.postBasket({ idUser, idProduct, count });
         console.log('Товар добавлен в корзину');
-        alert('товар добавлен в вашу корзинцу');
+        alert('товар добавлен в вашу корзину');
       }
     } catch (e) {
       console.log(e);

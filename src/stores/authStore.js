@@ -4,7 +4,7 @@ export default class AuthStore {
   userId = localStorage.getItem('userId') || null;
   userEmail = localStorage.getItem('userEmail') || null;
   Isrequest = false;
-  IsAuth = !!this.userId;
+  IsAuth = false;
   constructor() {
     makeAutoObservable(this);
   }

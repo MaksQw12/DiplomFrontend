@@ -25,6 +25,17 @@
   margin-bottom: 5px;
 }
 
+.error-message {
+  display: none;
+  color: red;
+  font-size: 0.8em;
+}
+
+.error-message.visible {
+  display: block;
+  margin-top: 5px;
+}
+
 .input-group input {
   width: 100%;
   padding: 10px;

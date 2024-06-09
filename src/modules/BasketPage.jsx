@@ -27,6 +27,10 @@ const BasketPage = () => {
   }
   const email = localStorage.getItem('userEmail');
   const handleOrder = async () => {
+    if (basketStore.basketUser.length === 0) {
+      alert('Ваша корзина пуста');
+      return;
+    }
     const templateParams = {
       to: `${email}`,
       subject: 'Ваш заказ',
@@ -36,7 +40,7 @@ const BasketPage = () => {
     emailjs.send('service_g7andhc', 'template_c6tfj1i', templateParams, 'cLLuXpJhz5SI85CSs').then(
       (response) => {
         console.log('SUCCESS!', response.status, response.text);
-        alert('Письмо отправлено: ' + response.text);
+        alert('Письмо отправлено: ' + 'Посмотрите почту');
       },
       (error) => {
         console.error('Ошибка при отправке письма:', error);
@@ -50,26 +54,35 @@ const BasketPage = () => {
 
   return (
     <div className="container-basket">
-      <div className="content-cart-basket">
-        {basketStore.basketUser.map((item) => (
-          <BasketPageCart
-            key={item.id}
-            id={item.id}
-            productName={item.product.productName}
-            count={item.count}
-            price={item.product.price}
-            image={item.product.image}
-            onDelete={() => handleDelete(item.id)}
-          />
-        ))}
-      </div>
+      {basketStore.basketUser.length === 0 ? (
+        <div className="empty-basket-message">
+          <h3>Корзина пуста</h3>
+          <div className="sad-face">😢</div>
+        </div>
+      ) : (
+        <>
+          <div className="content-cart-basket">
+            {basketStore.basketUser.map((item) => (
+              <BasketPageCart
+                key={item.id}
+                id={item.id}
+                productName={item.product.productName}
+                count={item.count}
+                price={item.product.price}
+                image={item.product.image}
+                onDelete={() => handleDelete(item.id)}
+              />
+            ))}
+          </div>
 
-      <div className="content-button">
-        <h5>Общая стоимость: {basketStore.totalCost} ₽</h5>
-        <button className="content-element-button" onClick={handleOrder}>
-          Оформить заказ
-        </button>
-      </div>
+          <div className="content-button">
+            <h5>Общая стоимость: {basketStore.totalCost} ₽</h5>
+            <button className="content-element-button" onClick={handleOrder}>
+              Оформить заказ
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };

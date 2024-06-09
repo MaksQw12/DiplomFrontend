@@ -3,7 +3,7 @@ import UserService from '../services/userService';
 
 export default class UserStore {
   user = null;
-
+  isReg = false;
   constructor() {
     makeAutoObservable(this);
   }
@@ -11,8 +11,11 @@ export default class UserStore {
   async postUser(userData) {
     try {
       const response = await UserService.postUser(userData);
-      this.user = response.data;
-      console.log(this.user);
+      if (response.status === 201) {
+        this.isReg = true;
+        this.user = response.data;
+        console.log(this.user);
+      }
       return this.user;
     } catch (e) {
       console.log(e);

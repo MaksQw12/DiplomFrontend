@@ -74,7 +74,7 @@ const MainPage = () => {
             <img src={vk_logo} alt="vk_image" className="content-footer-image"></img>
           </a>
         </div>
-        <div className="footer-text">Почта: example@gmail.com </div>
+        <div className="footer-text">Почта: WorkToCode@yandex.ru </div>
       </div>
     </div>
   );

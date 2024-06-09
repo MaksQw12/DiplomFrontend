@@ -21,6 +21,8 @@ const Auth = () => {
       await authStore.postGetCode({ userName, email });
       if (authStore.Isrequest === true) {
         navigate('/AuthCode');
+      } else {
+        alert('Данные неправильные или пустые поля');
       }
     } catch (e) {
       console.log(e);
