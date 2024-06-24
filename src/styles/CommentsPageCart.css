@@ -10,6 +10,7 @@
   padding: 20px;
   background: linear-gradient(135deg, #f3f4f6, #ffffff);
   transition: box-shadow 0.3s ease-in-out;
+  margin-bottom: 10px;
 }
 
 .content-cart-comments:hover {

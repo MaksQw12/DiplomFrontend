@@ -34,6 +34,35 @@
   font-size: 16px;
 }
 
+.quantity-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%; /* For circular buttons */
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.quantity-button:last-of-type {
+  margin-right: 0;
+}
+
+.quantity-button:hover {
+  background-color: #0056b3;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
 .basket-cart-delete-button {
   align-self: flex-start;
   padding: 5px 10px;

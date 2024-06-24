@@ -23,6 +23,10 @@ const ItemDetailPage = () => {
 
   const handleComments = async (e) => {
     e.preventDefault();
+    if (!text || estimation === 0) {
+      alert('Пожалуйста, заполните текст комментария и выберите оценку.');
+      return;
+    }
     try {
       await commentsStore.postComments({
         idUser: localStorage.getItem('userId'),
@@ -30,6 +34,8 @@ const ItemDetailPage = () => {
         text,
         estimation,
       });
+      setText('');
+      setEstimation(0);
     } catch (e) {
       console.log(e);
     }
@@ -74,6 +80,7 @@ const ItemDetailPage = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (!product) {
       const savedProduct = localStorage.getItem('selectedProduct');
       if (savedProduct) {
@@ -142,15 +149,19 @@ const ItemDetailPage = () => {
           </button>
         </div>
       </div>
-
+      <h1 className="h1-header">Комментарии</h1>
       <div className="content-comments">
-        {loading
-          ? Array.from({ length: 10 }).map((_, index) => (
-              <CommentCartSkeleton className="content-skeleton" key={index} />
-            ))
-          : commentsStore.comments.map((res) => (
-              <CommentsPageCart key={res.id} text={res.text} estimation={res.estimation} />
-            ))}
+        {loading ? (
+          Array.from({ length: 10 }).map((_, index) => (
+            <CommentCartSkeleton className="content-skeleton" key={index} />
+          ))
+        ) : commentsStore.comments.length === 0 ? (
+          <p>Нет комментариев. Будьте первым, кто оставит комментарий!</p>
+        ) : (
+          commentsStore.comments.map((res) => (
+            <CommentsPageCart key={res.id} text={res.text} estimation={res.estimation} />
+          ))
+        )}
       </div>
     </div>
   );

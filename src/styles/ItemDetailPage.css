@@ -42,6 +42,9 @@
   justify-content: space-around;
   align-items: start;
 }
+.h1-header {
+  text-align: center;
+}
 
 .main-page-view {
   padding: 20px;
