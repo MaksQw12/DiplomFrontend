@@ -9,7 +9,10 @@ import { useNavigate } from 'react-router-dom';
 import ItemDetailPage from './ItemDetailPage';
 import BasketPage from './BasketPage';
 import MainPageView from './MainPageView';
+import { useContext } from 'react';
+import { Context } from '../main';
 const MainPage = () => {
+  const { authStore } = useContext(Context);
   const navigate = useNavigate();
   const [isProfilePanelVisible, setIsProfilePanelVisible] = useState(false);
   const email = localStorage.getItem('userEmail');
@@ -20,6 +23,8 @@ const MainPage = () => {
   const handleLogOut = () => {
     localStorage.removeItem('userId');
     localStorage.removeItem('userEmail');
+    authStore.IsAuth = false;
+    authStore.Isrequest = false;
     navigate('/');
   };
   return (
