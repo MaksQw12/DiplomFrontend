@@ -18,7 +18,6 @@
     <li>Поиск товаров</li>
     <li>Корзина товаров</li>
     <li>Оформление заказа</li>
-    <li></li>
 </ul>
 
-<h3>Ссылка на Backend: [https://github.com/MaksQw12/BackendApi]</h3>
+<h3>Ссылка на Backend: https://github.com/MaksQw12/BackendApi</h3>
